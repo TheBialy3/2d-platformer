@@ -18,6 +18,9 @@ var move_input:float
 
 @export var health:int=3
 
+@onready var audio :AudioStreamPlayer=$AudioStreamPlayer
+var take_damage_sfx:AudioStream=preload("res://Audio/take_damage.wav")
+var coin_sfx:AudioStream=preload("res://Audio/coin.wav")
 
 func _physics_process(delta: float) -> void:
 	#gravity
@@ -46,13 +49,15 @@ func _physics_process(delta: float) -> void:
 	_manage_animation()
 	
 	#score display
+	if global_position.y>200:
+		game_over()
+		
 	
 	
 	
 	
 	
-	
-func _process(delta: float) -> void:
+func _process(delta) :
 	if velocity.x !=0:
 		sprite.flip_h=velocity.x>0
 	
@@ -71,17 +76,17 @@ func take_damage(amount:int):
 	if health<=0:
 		call_deferred("game_over")
 	_damage_flash()
-		
+	play_sound(take_damage_sfx)
 		
 func game_over ():
 	PlayerStats.score=0
-	get_tree().change_scene_to_file("res://Scenes/lvl_1.tscn" )
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn" )
 	
 	
 func add_score(amount):
 	PlayerStats.score+=amount
 	OnUpdateScore.emit(PlayerStats.score)
-	
+	play_sound(coin_sfx)
 func _damage_flash():
 	for i in 2:
 		sprite.modulate=Color.RED
@@ -89,6 +94,8 @@ func _damage_flash():
 		sprite.modulate=Color.WHITE
 		await  get_tree().create_timer(0.1).timeout
 	
-	
+func play_sound(sound: AudioStream):
+	audio.stream=sound
+	audio.play()
 	
 	

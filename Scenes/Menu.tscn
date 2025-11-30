@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://yjgg7pqj8wi6"]
+
+[ext_resource type="Script" uid="uid://ckeupcea0u1yv" path="res://Scripts/menu.gd" id="1_5yleq"]
+[ext_resource type="Texture2D" uid="uid://lpmvjtv2kw3v" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_uubjt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uubjt"]
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5yleq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -84.0
+offset_top = -37.000008
+offset_right = -44.0
+offset_bottom = 2.9999924
+scale = Vector2(333, 333)
+texture = ExtResource("1_uubjt")
+expand_mode = 5
+
+[node name="Title" type="Label" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -268.0
+offset_right = -41.0
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.8023999, 4.2931404)
+text = "2D platfoiemer"
+label_settings = SubResource("LabelSettings_uubjt")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 204.00002
+offset_right = 536.0
+offset_bottom = 235.00002
+scale = Vector2(4.716548, 4.716548)
+text = "Play
+"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 384.0
+offset_right = 541.0
+offset_bottom = 415.0
+scale = Vector2(4.716548, 4.716548)
+text = "Quit
+"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

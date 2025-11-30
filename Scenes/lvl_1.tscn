@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://w5ufdqxj7v5v"]
+[gd_scene load_steps=8 format=4 uid="uid://w5ufdqxj7v5v"]
 
+[ext_resource type="Script" uid="uid://bdgmp2u4nf2y6" path="res://Scripts/background.gd" id="1_0naw0"]
 [ext_resource type="Texture2D" uid="uid://lpmvjtv2kw3v" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_671ag"]
 [ext_resource type="TileSet" uid="uid://btj6bu574xvc5" path="res://Sprites/Tiles/new_tile_set.tres" id="1_qjdxc"]
 [ext_resource type="PackedScene" uid="uid://bpt2nixjbafj0" path="res://Scenes/player.tscn" id="3_rf4qq"]
@@ -9,8 +10,46 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="BackgroundForest" type="Sprite2D" parent="."]
-position = Vector2(303, -125)
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_0naw0")
+
+[node name="BackgroundForest" type="Sprite2D" parent="Background"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest2" type="Sprite2D" parent="Background"]
+position = Vector2(512, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest3" type="Sprite2D" parent="Background"]
+position = Vector2(1024, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest4" type="Sprite2D" parent="Background"]
+position = Vector2(1536, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest5" type="Sprite2D" parent="Background"]
+position = Vector2(-2048, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest6" type="Sprite2D" parent="Background"]
+position = Vector2(-1536, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest7" type="Sprite2D" parent="Background"]
+position = Vector2(-1024, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_671ag")
+
+[node name="BackgroundForest8" type="Sprite2D" parent="Background"]
+position = Vector2(-512, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_671ag")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
