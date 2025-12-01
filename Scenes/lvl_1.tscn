@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://w5ufdqxj7v5v"]
+[gd_scene load_steps=9 format=4 uid="uid://w5ufdqxj7v5v"]
 
 [ext_resource type="Script" uid="uid://bdgmp2u4nf2y6" path="res://Scripts/background.gd" id="1_0naw0"]
 [ext_resource type="Texture2D" uid="uid://lpmvjtv2kw3v" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_671ag"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kx8is75udj8p" path="res://Scenes/enemy.tscn" id="4_olvls"]
 [ext_resource type="PackedScene" uid="uid://ssqtviq14bqh" path="res://Scenes/coin.tscn" id="5_md3j3"]
 [ext_resource type="PackedScene" uid="uid://ppntpwxobnx" path="res://Scenes/end_flag.tscn" id="6_34tpy"]
+[ext_resource type="PackedScene" uid="uid://oio8mcjgpki7" path="res://Scenes/lvl_2.tscn" id="8_aju2k"]
 
 [node name="Main" type="Node2D"]
 
@@ -112,3 +113,4 @@ move_dir = Vector2(-70, 0)
 
 [node name="EndFlag" parent="." instance=ExtResource("6_34tpy")]
 position = Vector2(711, -27)
+scene_to_load = ExtResource("8_aju2k")
